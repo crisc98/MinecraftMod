@@ -46,7 +46,8 @@ public class ExampleMod
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
     // Creates a new SwordItem
-    public static final RegistryObject<SwordItem> CUSTOM_SWORD_ITEM = ITEMS.register("custom_sword", () -> new SwordItem(Tiers.WOOD, 5, -2.8f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)));
+	public static final RegistryObject<SwordItem> CUSTOM_SWORD_ITEM = ITEMS.register(
+			"custom_sword", () -> new SwordItem(Tiers.WOOD, 5, -2.8f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)));
 
     public ExampleMod()
     {
@@ -62,6 +63,7 @@ public class ExampleMod
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
+        
     }
 
     private void commonSetup(final FMLCommonSetupEvent event)
@@ -70,6 +72,8 @@ public class ExampleMod
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
+    
+    //THIS IS A BRANCH TEST
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
