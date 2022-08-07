@@ -70,6 +70,8 @@ public class ExampleMod
         LOGGER.info("HELLO FROM COMMON SETUP");
         LOGGER.info("DIRT BLOCK >> {}", ForgeRegistries.BLOCKS.getKey(Blocks.DIRT));
     }
+    
+    //THIS IS A BRANCH TEST
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
