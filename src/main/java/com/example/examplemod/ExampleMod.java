@@ -46,8 +46,8 @@ public class ExampleMod
     // Creates a new BlockItem with the id "examplemod:example_block", combining the namespace and path
     public static final RegistryObject<Item> EXAMPLE_BLOCK_ITEM = ITEMS.register("example_block", () -> new BlockItem(EXAMPLE_BLOCK.get(), new Item.Properties().tab(CreativeModeTab.TAB_BUILDING_BLOCKS)));
     // Creates a new SwordItem
-	public static final RegistryObject<SwordItem> CUSTOM_SWORD_ITEM = ITEMS.register(
-			"custom_sword", () -> new SwordItem(Tiers.WOOD, 5, -2.8f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)));
+	public static final RegistryObject<ExaltedBlade> CUSTOM_SWORD_ITEM = ITEMS.register(
+			"custom_sword", () -> new ExaltedBlade(Tiers.WOOD, 5, -2.8f, (new Item.Properties()).tab(CreativeModeTab.TAB_COMBAT)));
 
     public ExampleMod()
     {
