@@ -13,23 +13,22 @@ import net.minecraft.world.phys.Vec3;
 
 public class ExaltedBlade extends SwordItem {
 	public ExaltedBlade(Tier tier, int damage, float atkSpeed, Item.Properties props) {
-	  super(tier, damage, atkSpeed, props);
+		super(tier, damage, atkSpeed, props);
 	}
-	
+
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-	  fireProjectile(player);
-      return super.use(level, player, hand);
+		fireProjectile(player);
+		return super.use(level, player, hand);
 	}
-	
+
 	private void fireProjectile(Player player) {
-	  Level level = player.level;
-	  ExaltedBladeProjectile proj = new ExaltedBladeProjectile(EntityType.FIREBALL, level);
-	  Vec3 srcPos = player.position();
-	  proj.setPos(srcPos);
-	  proj.noPhysics = false;
-	  level.addFreshEntity(proj);
-	  proj.shootFromRotation(player, player.getXRot(), player.getYRot(), 10.0F, 1.1F, 1.0F);
+		Level level = player.level;
+		ExaltedBladeProjectile proj = new ExaltedBladeProjectile(EntityType.FIREBALL, level);
+		Vec3 srcPos = player.position().add(new Vec3(0.0F, 1.0F, 0.0F));
+		proj.setPos(srcPos);
+		level.addFreshEntity(proj);
+		proj.shootFromRotation(player, player.getXRot(), player.getYRot(), 1.0F, 1.0F, 1.0F);
 	}
-	
+
 }
